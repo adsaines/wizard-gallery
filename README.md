@@ -24,3 +24,5 @@ Wizard gallery! We'll be consuming a harry potter API and displaying it's conten
 3) Consume and show one of the items in the API
 4) Create a form for that item
 5) Repeat 3/4 add-nasuem until API is all consumed
+
+Also, somewhere in here we need to make a branch or two.
