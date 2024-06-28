@@ -14,3 +14,4 @@ The Basic Setup: https://git-scm.com/doc
 # I'm making an edit
 
 This edit will be the second commit for the file on my computer!
+Wizard gallery! We'll be consuming a harry potter API and displaying it's contents for the user to enjoy! It will be amazing!
