@@ -37,10 +37,10 @@ export const TodoItem = ({
 
     return (
         <div className="flex">
-            <div className="pr-2">
+            <div className="p-2 ">
                 <input type="checkbox" checked={completed} />
             </div>
-            <div className="pr-2">
+            <div className="p-2 border border-gray-300">
                 <input 
                     value={myTask} 
                     onChange={(event) => {
@@ -49,16 +49,16 @@ export const TodoItem = ({
                     }} 
                 />
             </div>
-            <div className="pr-2">
+            <div className="p-2 border border-gray-300">
                 <p className="h-5">task: {task}</p>
                 <p className="h-5">taskTernaryExample: {taskTernaryExample}</p>
                 <p className="h-5">taskIfExample: {taskIfExample}</p>
                 <p className="h-5">typescriptFun: {typescriptFun}</p>
             </div>
-            <div className="pr-2">
+            <div className="p-2 border border-gray-300">
                 {completeByTime.toLocaleDateString()}
             </div>
-            <div className="pr-2">
+            <div className="p-2 border border-gray-300">
                 <ul>
                     {
                         dependentTasks?.map((task, count) => {
