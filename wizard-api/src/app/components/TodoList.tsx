@@ -3,7 +3,25 @@
 
 import { TodoItem, TodoItemProps } from "./TodoItem"
 
-export const TodoList = () => {
+export interface potion {
+    characteristics:null
+    difficulty: string
+    effect: string
+    id: string
+    ingredients: string[]
+    inventors: any[]
+    manufacturer: string
+    name: string
+    sideEffects: string
+    time: null
+}
+
+export interface toDoListProps{
+    data:potion[]
+}
+
+
+export const TodoList = ({data}:toDoListProps) => {
 
     const myTodoItems: TodoItemProps[] = [
         {
@@ -26,13 +44,13 @@ export const TodoList = () => {
     return (
         <ul>
             {
-                myTodoItems.map((todo, count) => (
+                data.map((potion, count) => (
                     <li key={count} className="pb-2">
                         <TodoItem 
-                            task={todo.task}
-                            completeByTime={todo.completeByTime}
+                            task={potion.name}
+                            completeByTime={new Date()}
                         />
-                        {count < myTodoItems.length - 1 && <hr style={{ borderColor: 'black' }} />}
+                        {count < data.length - 1 && <hr style={{ borderColor: 'black' }} />}
                     </li>
                 ))
             }

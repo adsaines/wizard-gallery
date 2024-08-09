@@ -8,7 +8,7 @@
  */
 
 
-const enum elixirDifficulty {
+export const enum elixirDifficulty {
     'Unknown'
     , 'Advanced'
     , 'Moderate'
@@ -34,7 +34,9 @@ export const fetchElixirList = async (difficulty?: elixirDifficulty) => {
 
     return await fetch(
         `https://wizard-world-api.herokuapp.com/Elixirs?${body}`
-    );
+    ).then((value)=>{
+        return value.json()
+    })
 
     // return [];
 }
