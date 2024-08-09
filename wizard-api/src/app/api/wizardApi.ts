@@ -17,6 +17,24 @@ const enum elixirDifficulty {
     , 'OneOfAKind'
 }
 
-const fetchElixirList = (difficulty: elixirDifficulty) => {
-    return [];
+interface ElixirApiData {
+    name?: string;
+    difficulty?: elixirDifficulty;
+    ingredient?: string;
+    inventorFullName?: string;
+    manufacturer?: string;
+}
+
+export const fetchElixirList = async (difficulty?: elixirDifficulty) => {
+    if (typeof difficulty === 'undefined') {
+        difficulty = elixirDifficulty.Beginner;
+    }
+
+    const body = encodeURI(`difficulty=${difficulty}`);
+
+    return await fetch(
+        `https://wizard-world-api.herokuapp.com/Elixirs?${body}`
+    );
+
+    // return [];
 }
